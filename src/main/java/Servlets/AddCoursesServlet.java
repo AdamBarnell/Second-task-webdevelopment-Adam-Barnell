@@ -33,9 +33,9 @@ public class AddCoursesServlet extends HttpServlet {
         out.println("<h1 class='h1' style=margin-top:10px;>Add Course</h1>");
         out.println("<div class='form-container'>");
         out.println("<form action='/addcourse' method='post' class='input'>");
-        out.println("Namn: <input type='text' name='name'>");
-        out.println("Description: <input type='text' name='description'>");
-        out.println("YHP: <input type='text' name='yhp'>");
+        out.println("Namn: <input type='text' name='name' required>");
+        out.println("Description: <input type='text' name='description' required>");
+        out.println("YHP: <input type='text' name='yhp' required>");
         out.println("<input type='submit' value='Lägg till' class='backbutton'>");
         out.println("</form>");
         out.println("</div>");

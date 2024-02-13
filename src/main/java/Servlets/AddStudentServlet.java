@@ -12,8 +12,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static java.lang.System.out;
-
 @WebServlet("/addstudent")
 public class AddStudentServlet extends HttpServlet {
 
@@ -38,10 +36,10 @@ public class AddStudentServlet extends HttpServlet {
         out.println("<h1 class='h1' style=margin-top:10px;>Add Student</h1>");
         out.println("<div class='form-container'>");
         out.println("<form action='/addstudent' method='post' class='input'>");
-        out.println("Förnamn: <input type='text' name='name'>");
-        out.println("Efternamn: <input type='text' name='lastname'>");
-        out.println("Hobby: <input type='text' name='hobby'>");
-        out.println("Stad: <input type='text' name='town'>");
+        out.println("Förnamn: <input type='text' name='name' required>");
+        out.println("Efternamn: <input type='text' name='lastname' required>");
+        out.println("Hobby: <input type='text' name='hobby' required>");
+        out.println("Stad: <input type='text' name='town' required>");
         out.println("<input type='submit' value='Lägg till' class='backbutton'>");
         out.println("</form>");
         out.println("</div>");
@@ -67,7 +65,7 @@ public class AddStudentServlet extends HttpServlet {
 
             int result = statement.executeUpdate();
             if (result > 0) {
-                response.sendRedirect(request.getContextPath() + "/students"); // Använd en faktisk sida för framgångsrik insättning
+                response.sendRedirect(request.getContextPath() + "/students");
             } else {
                 PrintWriter out = response.getWriter();
                 response.setContentType("text/html");

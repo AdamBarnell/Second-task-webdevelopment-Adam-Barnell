@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-import static java.lang.System.out;
-
 @WebServlet(urlPatterns = "/courses")
 public class CoursesServlet extends HttpServlet {
 
@@ -58,13 +56,6 @@ public class CoursesServlet extends HttpServlet {
         } catch (Exception e) {
             out.println("Error: " + e);
         }
-        out.println("<div class='form-container'>");
-        out.println("<form action='/students' method='POST' class='input'>");
-        out.println("Förnamn: <input type='text' name='fname'> ");
-        out.println("Efternamn: <input type='text' name='lname'> ");
-        out.println("<input type='submit' value='Sök' class='backbutton'>");
-        out.println("</form>");
-        out.println("</div>");
         out.println("<footer><p> Gjord av Adam Barnell </p></footer>");
         out.println("</body>");
         out.println("</html>");

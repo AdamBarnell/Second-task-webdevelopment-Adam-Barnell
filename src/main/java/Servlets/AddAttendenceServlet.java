@@ -138,7 +138,6 @@ public class AddAttendenceServlet extends HttpServlet {
             pstmt.setInt(1, Integer.parseInt(studentId));
             pstmt.setInt(2, Integer.parseInt(courseId));
 
-            // Utför SQL-frågan
             pstmt.executeUpdate();
 
             // Omdirigera användaren eller skriv ut ett bekräftelsemeddelande
